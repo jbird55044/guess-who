@@ -5,13 +5,13 @@ $(document).ready (letsGo);
 
 
 function letsGo () {
-
     randomizeArray(people);   //randomizes placement of people
     updatePicsInDom ();
     $('#randomPickButtonId').on ('click', pickRandomName)
     $('.pictureAreaClass').on ('click', '.pictureClass', peoplePicker);
-}
+}  // end of letsGo fn
 
+// ----------- functions ---------------
 
 function updatePicsInDom () {
     let html = '';
@@ -31,16 +31,18 @@ function pickRandomName () {
     $('#nameToBeFoundId').append(`-->The person you are looking for is: ${thePick}`);
 } // end of pickRandomName fn
 
+
 function randomNumberGen (min, max, fixed) {
     let rn = 0;
     rn=((Math.random() * (max - min))+ min).toFixed(fixed);
     return +rn;
 }  // end of randomNumberGen fn
 
+
 function randomizeArray (arrayToBeRandomized) {
     // help from: https://javascript.info/task/shuffle
     arrayToBeRandomized.sort ( () => Math.random() -0.5);
-}
+}  // end of randomizeArray fn
 
 
 function peoplePicker () {
